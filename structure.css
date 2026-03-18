@@ -1,103 +1,74 @@
+@import url('base.css');
 
-.bg-image{
-    height:100%;
-    background-color: #4A5A23;
+/* ── CONTENT PAGES ──────────────────────── */
+.page-body {
+  min-height: calc(100vh - 136px);
+  background: linear-gradient(170deg, #1a3a2a 0%, #0e2216 60%, #1a2f1e 100%);
 }
 
-.container{
-    height: 768px;
-    display: grid;
-    justify-content: center;
-    padding: 20px 0 0 25px ;
-    overflow-y: scroll;
+/* sticky article progress bar */
+.article-progress {
+  position: sticky; top: 56px; z-index: 90;
+  height: 3px; background: rgba(255,255,255,0.06);
+}
+.article-progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #4a7c59, #c8903a);
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
 }
 
-.section2{
-    background-color: #FFeFee;
-    padding:13px;
-    border-radius: 10px;
-    color: black;
-    font-family:Verdana;
-    width:95%;
-    opacity: 0.8;
-    font-size: 18px;
-
+.page-container {
+  max-width: 860px; margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex; flex-direction: column; gap: 32px;
 }
 
-
-
-
-
-/* Default */
-.effect{
-    animation:PageChange 0.3s;
+/* ── ARTICLE CARD ─────────────────────── */
+.section2 {
+  background: rgba(250,248,242,0.06);
+  border: 1px solid rgba(184,212,188,0.15);
+  border-radius: 14px; padding: 32px 36px;
+  backdrop-filter: blur(6px);
+  color: rgba(245,240,232,0.88); font-size: 1rem; line-height: 1.78;
+  /* reveal handled by .reveal class */
 }
-@keyframes PageChange {
-    from{
-        opacity:0;
-        transform:rotateX(-70deg) rotateY(0);
-    } 
-    to{
-        opacity: 1;
-        transform: rotateX(0) rotateY(0);
-    }
+.section2 h2 { color: #b8d4bc; margin-bottom: 16px; font-size: 1.6rem; }
+.section2 h3 { color: #7aab82; margin: 20px 0 10px; font-size: 1.15rem; }
+.section2 h4, .section2 h5 {
+  color: #c8903a; font-family: 'DM Sans', sans-serif;
+  font-weight: 500; margin: 18px 0 6px; font-size: 0.95rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
 }
+.section2 p { margin-bottom: 14px; }
+.section2 pre {
+  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; white-space: pre-wrap;
+  background: rgba(46,92,62,0.25); border-left: 3px solid #4a7c59;
+  padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 14px 0; color: #b8d4bc;
+}
+.section2 pre a { color: #7aab82; display: block; margin: 4px 0; transition: color 0.2s; }
+.section2 pre a:hover { color: #c8903a; }
+.section2 img {
+  display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 20px 0;
+  border: 1px solid rgba(184,212,188,0.2); box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.section2 img:hover { transform: scale(1.02); box-shadow: 0 12px 40px rgba(0,0,0,0.45); }
+.section2 a { color: #7aab82; font-weight: 500; transition: color 0.2s; }
+.section2 a:hover { color: #c8903a; }
 
-a{
-    text-decoration: none;
+/* ── FACT HIGHLIGHT ────────────────────── */
+.fact-highlight {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: rgba(74,124,89,0.15);
+  border: 1px solid rgba(122,171,130,0.25);
+  border-radius: 10px; padding: 16px 20px; margin: 16px 0;
 }
+.fact-highlight .fact-icon { font-size: 1.4rem; flex-shrink: 0; }
+.fact-highlight p { margin: 0; font-size: 0.93rem; color: #b8d4bc; }
 
-*{
-    margin:0;
-
+/* ── BACK FOOTER CARD ─────────────────── */
+.section2.back-card {
+  background: rgba(74,124,89,0.12);
+  border-color: rgba(74,124,89,0.3); padding: 18px 28px; font-size: 0.9rem;
 }
-
-/* Header */
-header{
-    display:flex;  
-    height: 100px;
-    background-color: #FAF8ED;
-    align-items: center;
-    justify-content: center;
-}
-h1{
-    color:black;
-    text-shadow:0 3px 5px green;
-}
-
-/* Nav bar */
-.nav-bar{
-    padding:0;
-    background-color: #748E63;
-    display: flex;
-    align-items:center;
-    height: 50px;
-
-}
-
-.nav-a{
-    color: whitesmoke;
-    padding:0 10px 0 10px;
-    transition: ease-in-out 100ms;
-
-}
-.nav-a:hover{
-    color: aquamarine;
-    opacity:0.5;
-    transform:scale(1.1);
-}
-.on{
-    color:darkgreen;
-}
-/* BODY */
-body{
-    background-color: #748E63;
-} 
-/* To hide scroll bar in body section */
-body::-webkit-scrollbar{
-    display: none;
-}
-.container::-webkit-scrollbar{
-    display: none;
-}
-

@@ -1,26 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <link rel="stylesheet" href="style_home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style_home.css">
 </head>
 <body>
-    <header><h1>Introduction to Ecosystem</h1></header>
-    <nav class="nav-bar">
-        <a class="nav-a on" href="index.html">HOME</a>
-        <a class="nav-a" href="Eco1.html">EXPLORE</a>
-        <a class="nav-a" href="Gallery.html">GALLERY</a>
-        
-    </nav>
-    <div class="bg-image">
-        <div class="container">
-            <img class="hid-img" src="Eco-interaction1.jpg" alt="img-ecosystem1">
-            
-            <a class="sec-a effect" href="Eco1.html"><div class="section1"><h2>ECOSYSTEM</h2></div></a>
-            <div class="section2 effect">An ecosystem refers to a community of living organisms, such as plants and animals, interacting with each other and their non-living environment. It includes the physical, chemical and biological components of a specific area, and how they work together to create a system that is self-sustaining. Ecosystems can be found on different scales, from small ponds to entire biomes such as deserts or rainforests. They are important for maintaining biodiversity, regulating climate, and providing various ecosystem services that are essential to human life.</div>
-        </div> 
+  <header>
+    <h1>Introduction to Ecosystem</h1>
+  </header>
+  <nav class="nav-bar">
+    <a class="nav-a on" href="index.html">Home</a>
+    <a class="nav-a" href="Eco1.html">Explore</a>
+    <a class="nav-a" href="Gallery.html">Gallery</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg parallax-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge effect">Nature &amp; Science</span>
+      <h2 class="hero-title effect">Welcome to the World of <em>Ecosystems</em></h2>
+      <p class="hero-desc effect-2">
+        An ecosystem is a community of living organisms interacting with each other and their non-living environment.
+        From small ponds to vast rainforests, ecosystems sustain biodiversity, regulate climate, and support all life on Earth.
+      </p>
+      <a class="hero-cta effect-2" href="Eco1.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Start Exploring
+      </a>
     </div>
+    <img class="hid-img" src="Eco-interaction1.jpg" alt="Ecosystem interaction">
+    <!-- scroll hint -->
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stat reveal delay-1">
+      <span class="stat-num" data-target="8700000" data-suffix="+">0</span>
+      <span class="stat-label">Species on Earth</span>
+    </div>
+    <div class="stat reveal delay-2">
+      <span class="stat-num" data-target="50" data-suffix="%">0</span>
+      <span class="stat-label">Oxygen from Forests</span>
+    </div>
+    <div class="stat reveal delay-3">
+      <span class="stat-num" data-target="1000000" data-suffix="+">0</span>
+      <span class="stat-label">Species Threatened</span>
+    </div>
+    <div class="stat reveal delay-4">
+      <span class="stat-num" data-target="71" data-suffix="%">0</span>
+      <span class="stat-label">Earth covered by Water</span>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="intro-section">
+    <div class="intro-text reveal-left">
+      <span class="section-tag">What is an Ecosystem?</span>
+      <h2>A Self-Sustaining <em>Web of Life</em></h2>
+      <p>
+        Ecosystems can be found on different scales — from a small pond to entire biomes such as deserts or rainforests.
+        They are vital for maintaining biodiversity, regulating climate, and providing services essential to human life.
+      </p>
+      <a class="hero-cta" href="Eco1.html" style="margin-top:8px;">Dive Deeper →</a>
+    </div>
+    <div class="intro-image reveal-right">
+      <img src="ecosystem.jpg" alt="Ecosystem" class="intro-img">
+      <div class="intro-img-badge">Explore Nature</div>
+    </div>
+  </section>
+
+  <!-- TOPIC CARDS -->
+  <section class="topics-section">
+    <h2 class="topics-heading reveal">Explore the Topics</h2>
+    <div class="topics-grid">
+      <a href="STRUCTURE.html" class="topic-card reveal delay-1">
+        <div class="topic-icon">🌿</div>
+        <h3>Structure</h3>
+        <p>Biotic &amp; abiotic components and how they interact.</p>
+        <span class="topic-link">Learn more →</span>
+      </a>
+      <a href="Fuctions.html" class="topic-card reveal delay-2">
+        <div class="topic-icon">⚡</div>
+        <h3>Functions</h3>
+        <p>Energy flow, nutrient cycling, and productivity.</p>
+        <span class="topic-link">Learn more →</span>
+      </a>
+      <a href="conserve.html" class="topic-card reveal delay-3">
+        <div class="topic-icon">♻️</div>
+        <h3>Conserve</h3>
+        <p>Practices and habits to protect our ecosystems.</p>
+        <span class="topic-link">Learn more →</span>
+      </a>
+    </div>
+  </section>
+
+  <script src="scroll-animations.js"></script>
 </body>
 </html>

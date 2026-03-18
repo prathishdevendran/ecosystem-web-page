@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery: Eco</title>
-    <link rel="stylesheet" href="Gallery.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="Gallery.css">
 </head>
 <body>
-    <header><h1>GALLERY</h1></header>
-    <nav class="nav-bar">
-        <a class="nav-a" href="index.html">HOME</a>
-        <a class="nav-a" href="Eco1.html">EXPLORE</a>
-        <a class="nav-a on" href="Gallery.html">GALLERY</a>
+  <header><h1>Gallery</h1></header>
+  <nav class="nav-bar">
+    <a class="nav-a" href="index.html">Home</a>
+    <a class="nav-a" href="Eco1.html">Explore</a>
+    <a class="nav-a on" href="Gallery.html">Gallery</a>
+  </nav>
 
-    </nav>
-    
-    <div class="cont-box effect">
-        <div class="box"><img class="gimg" src="g1.jpg"></div>
-        <div class="box"><img class="gimg" src="g2.jpg"></div>
-        <div class="box"><img class="gimg" src="g3.jpg"></div>
-        <div class="box"><img class="gimg" src="g4.jpg"></div>
-        <div class="box"><img class="gimg" src="g5.jpg"></div>
-        <div class="box"><img class="gimg" src="g6.jpg"></div>
-        <div class="box"><img class="gimg" src="g7.jpg"></div>
-        <div class="box"><img class="gimg" src="g8.jpg"></div>
-
+  <div class="gallery-wrap">
+    <div class="gallery-header reveal">
+      <h2>Ecosystem in Photographs</h2>
+      <p>Click any image to view full-screen</p>
     </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item reveal delay-1" onclick="openLightbox(0)"><img src="g1.jpg" alt="Ecosystem 1"><span class="gallery-item-label">Ecosystem 1</span></div>
+      <div class="gallery-item reveal delay-2" onclick="openLightbox(1)"><img src="g2.jpg" alt="Ecosystem 2"><span class="gallery-item-label">Ecosystem 2</span></div>
+      <div class="gallery-item reveal delay-3" onclick="openLightbox(2)"><img src="g3.jpg" alt="Ecosystem 3"><span class="gallery-item-label">Ecosystem 3</span></div>
+      <div class="gallery-item reveal delay-4" onclick="openLightbox(3)"><img src="g4.jpg" alt="Ecosystem 4"><span class="gallery-item-label">Ecosystem 4</span></div>
+      <div class="gallery-item reveal delay-1" onclick="openLightbox(4)"><img src="g5.jpg" alt="Ecosystem 5"><span class="gallery-item-label">Ecosystem 5</span></div>
+      <div class="gallery-item reveal delay-2" onclick="openLightbox(5)"><img src="g6.jpg" alt="Ecosystem 6"><span class="gallery-item-label">Ecosystem 6</span></div>
+      <div class="gallery-item reveal delay-3" onclick="openLightbox(6)"><img src="g7.jpg" alt="Ecosystem 7"><span class="gallery-item-label">Ecosystem 7</span></div>
+      <div class="gallery-item reveal delay-4" onclick="openLightbox(7)"><img src="g8.jpg" alt="Ecosystem 8"><span class="gallery-item-label">Ecosystem 8</span></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lb-prev" onclick="changeImage(-1)">&#8249;</span>
+    <img id="lightbox-img" src="" alt="">
+    <span class="lb-next" onclick="changeImage(1)">&#8250;</span>
+  </div>
+
+  <script src="scroll-animations.js"></script>
+  <script>
+    const images = ['g1.jpg','g2.jpg','g3.jpg','g4.jpg','g5.jpg','g6.jpg','g7.jpg','g8.jpg'];
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      document.getElementById('lightbox-img').src = images[current];
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function changeImage(dir) {
+      current = (current + dir + images.length) % images.length;
+      const img = document.getElementById('lightbox-img');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = images[current];
+        img.style.opacity = '1';
+        img.style.transition = 'opacity 0.3s';
+      }, 150);
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'ArrowLeft') changeImage(-1);
+    });
+  </script>
 </body>
 </html>
-
-<!-- need
-    ecosystem
-    food chain
-    food web
-    ecosystem pyramid
-    energy flow
-
- -->

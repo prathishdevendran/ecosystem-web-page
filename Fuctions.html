@@ -1,49 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functions</title>
-    <link rel="stylesheet" href="structure.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosystem Functions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="structure.css">
+  <style>
+    .func-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-top: 20px;
+    }
+    .func-card {
+      background: rgba(74,124,89,0.12); border: 1px solid rgba(122,171,130,0.2);
+      border-radius: 10px; padding: 18px 16px; text-align: center;
+      transition: background 0.3s, transform 0.3s, border-color 0.3s;
+    }
+    .func-card:hover { background: rgba(74,124,89,0.28); transform: translateY(-4px); border-color: rgba(200,144,58,0.4); }
+    .func-card .fc-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .func-card h4 { color: #c8903a; font-size: 0.9rem; margin-bottom: 6px; }
+    .func-card p { font-size: 0.83rem; color: rgba(245,240,232,0.65); line-height: 1.5; margin: 0; }
+  </style>
 </head>
 <body>
-    <header><h1>Ecosystem Functions</h1></header>
-    <nav class="nav-bar">
-        <a class="nav-a" href="index.html">HOME</a>
-        <a class="nav-a on" href="Eco1.html">EXPLORE</a>
-        <a class="nav-a" href="Gallery.html">GALLERY</a>
+  <header><h1>Ecosystem Functions</h1></header>
+  <nav class="nav-bar">
+    <a class="nav-a" href="index.html">Home</a>
+    <a class="nav-a on" href="Eco1.html">Explore</a>
+    <a class="nav-a" href="Gallery.html">Gallery</a>
+  </nav>
 
-    </nav>
-    <div class="bg-image">
-        <div class="container">
-            <div class="section2 effect">
-                
-                <p>
-                    <h2>Functions of Ecosystem</h2>
-The functions of the ecosystem are as follows:
-It regulates the essential ecological processes, supports life systems and renders stability.
-<br>
-It is also responsible for the cycling of nutrients between biotic and abiotic components.
-It maintains a balance among the various trophic levels in the ecosystem.
-It cycles the minerals through the biosphere.
-<br>
-The abiotic components help in the synthesis of organic components that involve the exchange of energy.
-So the functional units of an ecosystem or functional components that work together in an ecosystem are:
-<br><br>
-<h4>Productivity:</h4> It refers to the rate of biomass production.
-<br><br>
-<h4>Energy flow:</h4> It is the sequential process through which energy flows from one trophic level to another. The energy captured from the sun flows from producers to consumers and then to decomposers and finally back to the environment.
-<br><br>
-<h4>Decomposition:</h4> It is the process of breakdown of dead organic material. The top-soil is the major site for decomposition.
-<br><br>
-<h4>Nutrient cycling:</h4> In an ecosystem nutrients are consumed and recycled back in various forms for the utilisation by various organisms.
+  <div class="article-progress"><div class="article-progress-fill" id="article-fill"></div></div>
 
-        
+  <div class="page-body">
+    <div class="page-container">
+
+      <div class="section2 reveal">
+        <h2>Functions of Ecosystem</h2>
+        <p>The functions of the ecosystem regulate essential ecological processes, support life systems, and render stability. The ecosystem is responsible for nutrient cycling, maintaining a balance among trophic levels, and cycling minerals through the biosphere.</p>
+
+        <div class="func-grid">
+          <div class="func-card reveal-scale delay-1">
+            <div class="fc-icon">🌱</div>
+            <h4>Productivity</h4>
+            <p>Rate of biomass production — how efficiently solar energy enters the ecosystem.</p>
+          </div>
+          <div class="func-card reveal-scale delay-2">
+            <div class="fc-icon">⚡</div>
+            <h4>Energy Flow</h4>
+            <p>Sequential transfer from producers → consumers → decomposers → environment.</p>
+          </div>
+          <div class="func-card reveal-scale delay-3">
+            <div class="fc-icon">🍂</div>
+            <h4>Decomposition</h4>
+            <p>Breakdown of dead organic material. Top-soil is the major site for decomposition.</p>
+          </div>
+          <div class="func-card reveal-scale delay-4">
+            <div class="fc-icon">🔄</div>
+            <h4>Nutrient Cycling</h4>
+            <p>Nutrients consumed and recycled back in various forms for reuse by organisms.</p>
+          </div>
         </div>
-<br><br>
-        <div class="section2 effect"><a href="Eco1.html"> Go Back To Explore More</a></div>
-        </div> 
+      </div>
+
+      <div class="section2 reveal delay-1">
+        <h3>Energy Flow in Detail</h3>
+        <p>Energy captured from the sun flows from producers to consumers and then to decomposers, and finally back to the environment. At each trophic level, approximately 90% of energy is lost as heat — only 10% passes to the next level.</p>
+        <div class="fact-highlight">
+          <span class="fact-icon">🔆</span>
+          <p>This 10% rule explains why food chains rarely exceed 4–5 trophic levels — there simply isn't enough energy to sustain a higher-level predator beyond that point.</p>
+        </div>
+      </div>
+
+      <div class="section2 reveal delay-2">
+        <h3>Nutrient Cycling</h3>
+        <p>Unlike energy, which flows in one direction, nutrients cycle through the ecosystem continuously. Carbon, nitrogen, phosphorus, and water all follow distinct biogeochemical cycles that link living organisms to the physical environment.</p>
+        <p>Decomposers play a critical role here — without them, nutrients would remain locked in dead organic matter and unavailable to producers.</p>
+      </div>
+
+      <div class="section2 back-card reveal delay-3">
+        <a href="Eco1.html" class="back-link">← Go Back to Explore</a>
+      </div>
+
     </div>
-    <br><br>
+  </div>
+
+  <script src="scroll-animations.js"></script>
+  <script>
+    const fill = document.getElementById('article-fill');
+    window.addEventListener('scroll', () => {
+      const body = document.querySelector('.page-body');
+      const rect = body.getBoundingClientRect();
+      const total = body.offsetHeight - window.innerHeight;
+      const scrolled = Math.max(0, -rect.top);
+      fill.style.width = Math.min(100, (scrolled / total) * 100) + '%';
+    }, { passive: true });
+  </script>
 </body>
 </html>

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --forest:     #1a3a2a;
+  --moss:       #2e5c3e;
+  --fern:       #4a7c59;
+  --sage:       #7aab82;
+  --mist:       #b8d4bc;
+  --parchment:  #f5f0e8;
+  --cream:      #faf8f2;
+  --earth:      #7a5c3a;
+  --amber:      #c8903a;
+  --bark:       #3a2a1a;
+  --white:      #ffffff;
+  --nav-h:      56px;
+  --header-h:   80px;
+  --radius:     14px;
+  --shadow:     0 8px 32px rgba(26,58,42,0.18);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--forest);
+  color: var(--parchment);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ─────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--forest); }
+::-webkit-scrollbar-thumb { background: var(--fern); border-radius: 99px; }
+
+/* ── SCROLL PROGRESS BAR ───────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--fern), var(--amber));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── TYPOGRAPHY ─────────────────────────── */
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+h1 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; }
+h2 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 400; }
+h3 { font-size: clamp(1rem, 2vw, 1.25rem); }
+h4, h5 { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--amber); margin-bottom: 4px; }
+p { line-height: 1.75; font-size: 1rem; }
+a { text-decoration: none; color: inherit; }
+
+/* ── HEADER ─────────────────────────────── */
+header {
+  height: var(--header-h);
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 2px solid var(--mist);
+}
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 50%;
+  transform: translateX(-50%);
+  width: 60px; height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+}
+header h1 { color: var(--forest); letter-spacing: 0.04em; }
+
+/* ── NAV BAR ─────────────────────────────── */
+.nav-bar {
+  height: var(--nav-h);
+  background: var(--moss);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  transition: background 0.3s;
+}
+.nav-bar.scrolled { background: rgba(26,58,42,0.97); backdrop-filter: blur(10px); }
+
+.nav-a {
+  color: var(--mist);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.nav-a.on { background: var(--fern); color: var(--cream); }
+
+/* ── SCROLL-REVEAL BASE STATES ─────────── */
+/* Elements start hidden; JS adds .revealed */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
+              transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
+              transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-left.revealed { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
+              transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-right.revealed { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1),
+              transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-scale.revealed { opacity: 1; transform: scale(1); }
+
+/* stagger delays */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+
+/* ── ENTRY ANIMATION (hero / page load) ── */
+.effect { animation: fadeUp 0.7s ease both; }
+.effect-2 { animation: fadeUp 0.7s 0.15s ease both; }
+.effect-3 { animation: fadeUp 0.7s 0.3s ease both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CARD / SECTION BOX ─────────────────── */
+.card {
+  background: rgba(250,248,242,0.07);
+  border: 1px solid rgba(184,212,188,0.18);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  backdrop-filter: blur(6px);
+}
+.card h2, .card h3 { color: var(--mist); margin-bottom: 12px; }
+.card p { color: var(--parchment); opacity: 0.9; }
+
+/* ── BACK LINK ───────────────────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sage);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: color var(--transition), gap var(--transition);
+}
+.back-link:hover { color: var(--amber); gap: 12px; }
+
+/* ── SHARED SCROLL JS ───────────────────── */
+/* Injected via scroll-animations.js */
